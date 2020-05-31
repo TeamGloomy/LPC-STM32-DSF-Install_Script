@@ -15,6 +15,7 @@ echo "Update APT and installing HTTPS and DSF"
 sudo apt-get -q -y install apt-transport-https
 sudo apt-get -q update
 sudo apt-get -q -y install duetsoftwareframework
+sudo apt-get -q -y install git
 echo "-----Update and install finished-----"
 echo "-----Download .NET Core-----"
 wget -q https://download.visualstudio.microsoft.com/download/pr/349f13f0-400e-476c-ba10-fe284b35b932/44a5863469051c5cf103129f1423ddb8/dotnet-sdk-3.1.102-linux-arm.tar.gz
