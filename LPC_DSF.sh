@@ -22,9 +22,9 @@ wget -q https://download.visualstudio.microsoft.com/download/pr/349f13f0-400e-47
 wget -q https://download.visualstudio.microsoft.com/download/pr/8ccacf09-e5eb-481b-a407-2398b08ac6ac/1cef921566cb9d1ca8c742c9c26a521c/aspnetcore-runtime-3.1.2-linux-arm.tar.gz
 echo "-----Download of .NET Core finished-----"
 echo "-----Create Folder and unzip .NET Core-----"
-mkdir dotnet-arm32
-tar zxf dotnet-sdk-3.1.102-linux-arm.tar.gz -C $HOME/dotnet-arm32
-tar zxf aspnetcore-runtime-3.1.2-linux-arm.tar.gz -C $HOME/dotnet-arm32
+sudo mkdir dotnet-arm32
+sudo tar zxf dotnet-sdk-3.1.102-linux-arm.tar.gz -C $HOME/dotnet-arm32
+sudo tar zxf aspnetcore-runtime-3.1.2-linux-arm.tar.gz -C $HOME/dotnet-arm32
 echo "-----Folder and unzip finished-----"
 echo "-----Make enviroment variables-----"
 export DOTNET_ROOT=$HOME/dotnet-arm32
