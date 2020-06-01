@@ -1,5 +1,6 @@
 echo "-----This will install the LPC Version of DSF-----"
 echo "-----Update and upgrade the PI-----"
+cd ~
 sudo apt-get -q update && sudo apt-get -y upgrade
 echo "-----Upgrade and Update finished-----"
 echo "-----Swichting to the unstable branch-----"
