@@ -29,6 +29,8 @@ echo "-----Folder and unzip finished-----"
 echo "-----Make enviroment variables-----"
 export DOTNET_ROOT=$HOME/dotnet-arm32
 export PATH=$PATH:$HOME/dotnet-arm32
+echo 'export DOTNET_ROOT=$HOME/dotnet-arm32' >> .profile
+echo 'export PATH=$PATH:$HOME/dotnet-arm32' >> .profile
 echo "-----Make finished-----"
 echo "-----Stop DCS and DWS---this will only works on the DuetPi with GUI-----"
 sudo systemctl stop duetcontrolserver
