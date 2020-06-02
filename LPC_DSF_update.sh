@@ -13,6 +13,8 @@ sudo systemctl stop duetcontrolserver
 sudo systemctl stop duetwebserver
 echo "-----Stoped-----"
 echo "-----Update DSF-----"
+export DOTNET_ROOT=$HOME/dotnet-arm32
+export PATH=$PATH:$HOME/dotnet-arm32
 cd DuetSoftwareFramework/src/DuetControlServer
 dotnet publish -r linux-arm -c Debug -o /opt/dsf/bin DuetControlServer.csproj
 echo "-----Update complete-----"
