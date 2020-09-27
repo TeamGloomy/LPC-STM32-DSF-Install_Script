@@ -3,15 +3,6 @@ echo "-----Update and upgrade the PI-----"
 cd ~
 sudo apt-get -q update && sudo apt-get -y upgrade
 echo "-----Upgrade and Update finished-----"
-echo "-----Swichting to the unstable branch-----"
-wget -q https://pkg.duet3d.com/duet3d.gpg
-wget -q https://pkg.duet3d.com/duet3d-unstable.list
-sudo mv duet3d.gpg /etc/apt/trusted.gpg.d/
-sudo mv duet3d-unstable.list /etc/apt/sources.list.d/duet3d-unstable.list
-sudo chown root:root /etc/apt/trusted.gpg.d/duet3d.gpg
-sudo chown root:root /etc/apt/sources.list.d/duet3d-unstable.list
-sudo rm /etc/apt/sources.list.d/duet3d.list
-echo "-----Switching finished-----"
 echo "Update APT and installing HTTPS and DSF"
 sudo apt-get -q -y install apt-transport-https
 sudo apt-get -q update
