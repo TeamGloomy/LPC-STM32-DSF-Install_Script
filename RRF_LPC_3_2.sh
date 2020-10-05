@@ -12,11 +12,15 @@ sudo chown root:root /etc/apt/trusted.gpg.d/duet3d.gpg
 sudo chown root:root /etc/apt/sources.list.d/duet3d-unstable.list
 sudo rm /etc/apt/sources.list.d/duet3d.list
 echo "-----Switching finished-----"
-echo "Update APT and installing HTTPS and DSF"
-sudo apt-get -q -y install apt-transport-https
-sudo apt-get -q update
-sudo apt-get -q -y install duetsoftwareframework
-sudo apt-get -q -y install git
+sudo apt -q update &&   sudo apt -y install \
+    duetsoftwareframework=3.2.0-beta1 \
+    duetcontrolserver=3.2.0-beta1 \
+    duetruntime=3.2.0-beta1 \
+    duetsd=1.0.7 \
+    duettools=3.2.0-beta1 \
+    duetwebcontrol=3.2.0-beta1+1 \
+    duetwebserver=3.2.0-beta1 \
+    reprapfirmware=3.2.0-beta1-1 \
 echo "-----Stop DCS and DWS---this will only works on the DuetPi with GUI-----"
 sudo systemctl stop duetcontrolserver
 sudo systemctl stop duetwebserver
