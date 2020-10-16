@@ -12,12 +12,12 @@ sudo chown root:root /etc/apt/trusted.gpg.d/duet3d.gpg
 sudo chown root:root /etc/apt/sources.list.d/duet3d-unstable.list
 sudo rm /etc/apt/sources.list.d/duet3d.list
 echo "-----Switching finished-----"
-sudo apt -q update && sudo apt -y install duetsoftwareframework=3.2.0-beta1+1 duetcontrolserver=3.2.0-beta1+1 duetsd=1.0.7 duettools=3.2.0-beta1+1 duetwebserver=3.2.0-beta1 duetwebcontrol=3.2.0-beta1+2 reprapfirmware=3.2.0-beta1+1-1 duetruntime=3.2.0-beta1+1
+sudo apt -q update && sudo apt upgrade
 echo "-----Stop DCS and DWS---this will only works on the DuetPi with GUI-----"
 sudo systemctl stop duetcontrolserver
 sudo systemctl stop duetwebserver
 echo "-----Both stoped-----"
-sudo sed -i -e 's/8192/4096/g' /opt/dsf/conf/config.json
+sudo sed -i -e 's/8192/3072/g' /opt/dsf/conf/config.json
 sudo sed -i -e 's/"SpiTransferMode": 0/"SpiTransferMode": 3/g' /opt/dsf/conf/config.json
 echo "-----CHANGES MADE-----"
 sudo systemctl start duetcontrolserver && sudo systemctl enable duetcontrolserver
