@@ -23,16 +23,6 @@ sudo chown root:root /etc/apt/sources.list.d/duet3d-unstable.list
 sudo rm /etc/apt/sources.list.d/duet3d.list
 echo "-----Switching finished-----"
 sudo apt -q update 
-sudo apt-mark unhold \
-    duetsoftwareframework \
-    duetcontrolserver \
-    duetruntime \
-    duetsd \
-    duetsoftwareframework \
-    duettools \
-    duetwebcontrol \
-    duetwebserver \
-    reprapfirmware
 sudo apt install \
     duetsoftwareframework=3.2.0-beta3 \
     duetcontrolserver=3.2.0-beta3 \

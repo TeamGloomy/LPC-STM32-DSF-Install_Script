@@ -23,17 +23,7 @@ sudo chown root:root /etc/apt/sources.list.d/duet3d-unstable.list
 sudo rm /etc/apt/sources.list.d/duet3d.list
 echo "-----Switching finished-----"
 sudo apt -q update 
-sudo apt-mark unhold \
-    duetsoftwareframework \
-    duetcontrolserver \
-    duetruntime \
-    duetsd \
-    duetsoftwareframework \
-    duettools \
-    duetwebcontrol \
-    duetwebserver \
-    reprapfirmware
-sudo apt install duetsoftwareframework=3.2.0-beta2 duetcontrolserver=3.2.0-beta2 duetruntime=3.2.0-beta2 duetsd=1.1.0 duetsoftwareframework=3.2.0 duettools=3.2.0-beta2 duetwebcontrol=3.2.0-beta2 duetwebserver=3.2.0-beta2 reprapfirmware=3.2.0-beta2-1 --allow-downgrades
+sudo apt install duetsoftwareframework=3.2.0-beta2 duetcontrolserver=3.2.0-beta2 duetruntime=3.2.0-beta2 duetsd=1.1.0 duetsoftwareframework=3.2.0-beta2 duettools=3.2.0-beta2 duetwebcontrol=3.2.0-beta2 duetwebserver=3.2.0-beta2 reprapfirmware=3.2.0-beta2-1 --allow-downgrades
 echo "-----Stop DCS and DWS---this will only works on the DuetPi with GUI-----"
 sudo systemctl stop duetcontrolserver
 sudo systemctl stop duetwebserver
