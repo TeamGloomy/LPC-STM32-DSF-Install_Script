@@ -28,7 +28,6 @@ sudo apt install \
     duetcontrolserver=3.2.0-beta3 \
     duetruntime=3.2.0-beta3 \
     duetsd=1.1.0 \
-    duetsoftwareframework=3.2.0-beta3 \
     duettools=3.2.0-beta3 \
     duetwebcontrol=3.2.0-beta3 \
     duetwebserver=3.2.0-beta3 \
