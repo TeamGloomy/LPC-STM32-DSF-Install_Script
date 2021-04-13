@@ -13,7 +13,16 @@ sudo apt-mark hold \
     reprapfirmware
 sudo apt-get -q update && sudo apt-get -y upgrade
 echo "-----Upgrade and Update finished-----"
-echo "-----Swichting to the unstable branch-----"
+echo "-----Switching to the unstable branch-----"
+sudo apt-mark unhold \
+    duetsoftwareframework \
+    duetcontrolserver \
+    duetruntime \
+    duetsd \
+    duettools \
+    duetwebcontrol \
+    duetwebserver \
+    reprapfirmware
 wget -q https://pkg.duet3d.com/duet3d.gpg
 wget -q https://pkg.duet3d.com/duet3d-unstable.list
 sudo mv duet3d.gpg /etc/apt/trusted.gpg.d/
@@ -33,6 +42,15 @@ sudo apt install \
 	duetwebserver=3.2.0-beta1 \
 	reprapfirmware=3.2.0-beta1+1-1 \
 	--allow-downgrades
+sudo apt-mark hold \
+    duetsoftwareframework \
+    duetcontrolserver \
+    duetruntime \
+    duetsd \
+    duettools \
+    duetwebcontrol \
+    duetwebserver \
+    reprapfirmware
 echo "-----Stop DCS and DWS---this will only works on the DuetPi with GUI-----"
 sudo systemctl stop duetcontrolserver
 sudo systemctl stop duetwebserver

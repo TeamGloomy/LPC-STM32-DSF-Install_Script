@@ -6,7 +6,6 @@ sudo apt-mark hold \
     duetcontrolserver \
     duetruntime \
     duetsd \
-    duetsoftwareframework \
     duettools \
     duetwebcontrol \
     duetwebserver \
@@ -14,6 +13,15 @@ sudo apt-mark hold \
 sudo apt-get -q update && sudo apt-get -y upgrade
 echo "-----Upgrade and Update finished-----"
 echo "-----Switching to the unstable branch-----"
+sudo apt-mark unhold \
+    duetsoftwareframework \
+    duetcontrolserver \
+    duetruntime \
+    duetsd \
+    duettools \
+    duetwebcontrol \
+    duetwebserver \
+    reprapfirmware
 wget -q https://pkg.duet3d.com/duet3d.gpg
 wget -q https://pkg.duet3d.com/duet3d-unstable.list
 sudo mv duet3d.gpg /etc/apt/trusted.gpg.d/
@@ -33,3 +41,12 @@ sudo apt install \
     duetwebserver=3.2.2 \
     reprapfirmware=3.2.2-1 \
     --allow-downgrades
+sudo apt-mark hold \
+    duetsoftwareframework \
+    duetcontrolserver \
+    duetruntime \
+    duetsd \
+    duettools \
+    duetwebcontrol \
+    duetwebserver \
+    reprapfirmware
